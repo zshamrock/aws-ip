@@ -7,6 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/aws/aws-sdk-go/service/iam"
+	"github.com/chyeh/pubip"
 )
 
 func main() {
@@ -16,7 +17,17 @@ func main() {
 		return
 	}
 	fmt.Println(username)
+	findIPAddress()
 	getSecurityGroupInboundRule(username, "home")
+}
+
+func findIPAddress() {
+	ip, err := pubip.Get()
+	if err != nil {
+		fmt.Println("Couldn't get my IP address:", err)
+	} else {
+		fmt.Println("My IP address is:", ip)
+	}
 }
 
 func getUserName() (string, error) {
