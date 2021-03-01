@@ -33,13 +33,21 @@ GLOBAL OPTIONS:
 Table of Contents
 =================
 
+* [Idea](#idea)
 * [Installation](#installation)
 * [Usage](#usage)
 * [AWS Connection](#aws-connection)
 * [Improvements](#improvements)
-* [Future Commands](#future-commands)
-* [Ideas](#ideas)
 * [Copyright](#copyright)
+
+## Idea
+
+Tool locates the entry within specified EC2 security group name(s) by description and updates it. The trick is around 
+description property. Where description will be set to 
+
+    <IAM username implicitly derived from the used AWS profile>-<location>
+
+where `location` is something user provides, like home, office, coworking, etc.
 
 ## Installation
 
@@ -62,7 +70,7 @@ Additionally, can take into the account `$AWS_IP_DEFAULT_SECURITY_GROUP_NAME`, s
 
 Alternative to `--port` could be `--service` option with values like `mysql`, `postgresql`, etc., and so you default defined port for these services.
 
-## Future Commands
+### Commands
 
 Might be good to add the following additional commands:
 
@@ -70,7 +78,7 @@ Might be good to add the following additional commands:
 - `ip` - prints user's current local IP address
 - `rm` - removes the corresponding entry
 
-## Ideas
+### Extra features
 
 Might be able auto-delete of the entry (after timeout), if user assigns IP of the public wi-fi, like cafe, library, airport, etc., while needs only temporal access from this location. And this could be the default behaviour, unless `--durable` flag is set.
 
@@ -78,5 +86,5 @@ Might be able auto-delete of the entry (after timeout), if user assigns IP of th
 
 Copyright (C) 2021-2021 by Aliaksandr Kazlou.
 
-aws-ip is released under MIT License.                                                                                                                       
+`aws-ip` is released under MIT License.                                                                                                                       
 See [LICENSE](https://github.com/zshamrock/aws-ip/blob/master/LICENSE) for details.
