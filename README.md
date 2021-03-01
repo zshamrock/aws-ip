@@ -39,6 +39,7 @@ Table of Contents
 * [Improvements](#improvements)
 * [Future Commands](#future-commands)
 * [Ideas](#ideas)
+* [Copyright](#copyright)
 
 ## Installation
 
@@ -72,3 +73,10 @@ Might be good to add the following additional commands:
 ## Ideas
 
 Might be able auto-delete of the entry (after timeout), if user assigns IP of the public wi-fi, like cafe, library, airport, etc., while needs only temporal access from this location. And this could be the default behaviour, unless `--durable` flag is set.
+
+## Copyright
+
+Copyright (C) 2021-2021 by Aliaksandr Kazlou.
+
+aws-ip is released under MIT License.                                                                                                                       
+See [LICENSE](https://github.com/zshamrock/aws-ip/blob/master/LICENSE) for details.
