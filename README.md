@@ -8,9 +8,9 @@ NAME:
 
 USAGE:
    aws-ip     
-        --group-name                                   <comma separated affected EC2 security groups> 
-        --port                                         <port>  
-        --location                                     <free text/code of the current user's location, like home, office, coworking, etc.>
+        --group-name    <comma separated affected EC2 security groups> 
+        --port          <port>  
+        --location      <free text/code of the current user's location, like home, office, coworking, etc.>
 
 VERSION:
    1.0.0
@@ -27,7 +27,6 @@ GLOBAL OPTIONS:
    --location value    free text/code of the current user's location, like home, office, coworking, etc.
    --help, -h          show help
    --version, -v       print the version
-
 ```
 
 Table of Contents

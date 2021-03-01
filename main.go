@@ -34,9 +34,9 @@ func main() {
 	app.Author = "(c) Aliaksandr Kazlou"
 	app.Metadata = map[string]interface{}{"GitHub": "https://github.com/zshamrock/aws-ip"}
 	app.UsageText = fmt.Sprintf(`%s		 
-        --group-name                                   <comma separated affected EC2 security groups> 
-        --port                                         <port>	
-        --location                                     <free text/code of the current user's location, like home, office, coworking, etc.>`,
+        --group-name    <comma separated affected EC2 security groups> 
+        --port          <port>	
+        --location      <free text/code of the current user's location, like home, office, coworking, etc.>`,
 		appName)
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
