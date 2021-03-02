@@ -121,6 +121,8 @@ func syncSecurityGroupInboundRule(
 			}
 			for _, entry := range inbound.IpRanges {
 				if aws.StringValue(entry.Description) == descriptionId {
+					fmt.Printf(":: found existing inbound rule: port %d-%d, ip %s\n",
+						aws.Int64Value(inbound.FromPort), aws.Int64Value(inbound.ToPort), aws.StringValue(entry.CidrIp))
 					err := revokeSecurityGroupIngress(svc, groupName, port, aws.StringValue(entry.CidrIp), username, location)
 					if err != nil {
 						return err
@@ -204,6 +206,7 @@ func authorizeSecurityGroupIngress(
 		return err
 	}
 	fmt.Println("done")
+	fmt.Printf(":: set new inbound rule: port %d-%d, ip %s\n", port, port, ipAddress)
 	return nil
 }
 
