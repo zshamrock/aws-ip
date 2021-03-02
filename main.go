@@ -29,7 +29,7 @@ const (
 func main() {
 	app := cli.NewApp()
 	app.Name = appName
-	app.Usage = `Sync/set AWS security group entry (by description) with current user's local IP address`
+	app.Usage = `Sync/set AWS security group entry (by description) with current user's local public IP address`
 	app.Version = version
 	app.Author = "(c) Aliaksandr Kazlou"
 	app.Metadata = map[string]interface{}{"GitHub": "https://github.com/zshamrock/aws-ip"}

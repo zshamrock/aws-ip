@@ -7,7 +7,7 @@ address or user works frequently from different locations with different IP addr
 
 ```
 NAME:
-   aws-ip - Sync/set AWS security group entry (by description) with current user's local IP address
+   aws-ip - Sync/set AWS security group entry (by description) with current user's local public IP address
 
 USAGE:
    aws-ip     
