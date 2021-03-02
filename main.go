@@ -112,14 +112,21 @@ func syncSecurityGroupInboundRule(
 	if err != nil {
 		return err
 	}
+	descriptionId := buildDescriptionId(username, location)
 	for _, group := range groups {
+		revoked := false
 		for _, inbound := range group.IpPermissions {
+			if revoked {
+				break
+			}
 			for _, entry := range inbound.IpRanges {
-				if aws.StringValue(entry.Description) == fmt.Sprintf("%s-%s", username, location) {
+				if aws.StringValue(entry.Description) == descriptionId {
 					err := revokeSecurityGroupIngress(svc, groupName, port, aws.StringValue(entry.CidrIp), username, location)
 					if err != nil {
 						return err
 					}
+					revoked = true
+					break
 				}
 			}
 		}
