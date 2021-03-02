@@ -1,6 +1,9 @@
 # aws-ip
 
-Sync/set AWS security group entry (by description) with current user's local IP address. I.e. if the access to AWS resources is limited by the IP address, and the user/machine doesn't have
+Sync/set AWS security group entry (by description) with current user's local public IP address. 
+
+I.e. if the access to AWS resources is restricted by the IP address, and the user/developer doesn't have fixed static IP 
+address or user works frequently from different locations with different IP addresses.
 
 ```
 NAME:
@@ -49,7 +52,8 @@ description property. Where description will be set to
 where `location` is something user provides, like home, office, coworking, etc.
 
 It solves the problem if the access to the AWS resource (like DB, for example) is restricted by the IP address, and 
-user/developer doesn't have fixed static IP address (which is changing frequently) or work from different places.
+user/developer doesn't have fixed static IP address (which is changing frequently) or user works frequently from 
+different locations with different IP addresses.
 
 ## Installation
 
